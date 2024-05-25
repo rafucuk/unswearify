@@ -1,7 +1,7 @@
 const profanity = require('../main');
 
 profanity.loadProfanities('tr_TR');
-let score = profanity.findProfanities("merhaba nasılsınız?")
+let score = profanity.findProfanities('This is a f*ck !',0.7);
 console.log(score)
 
 

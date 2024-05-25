@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 const levenshteinDistance = require('../lib/levenshteinDistance');
 const jaroWinklerDistance = require('../lib/jaroWinkler');
@@ -8,8 +9,13 @@ let PROFANITIES;
 
 function loadProfanities(filePath) {
     try {
-        const dataPath = path.join(__dirname, 'node_modules', 'unswearify', 'data', `${filePath}.json`);
-        const profanitiesData = fs.readFileSync(dataPath, 'utf8');
+        var path;
+        try {
+            path = require.resolve('../data/' + filePath + '.json');
+        } catch (e) {
+            path = require.resolve('unswearify/data/' + filePath + '.json');
+        }       
+        const profanitiesData = fs.readFileSync(path, 'utf8');
         PROFANITIES = new Set(JSON.parse(profanitiesData));
     } catch (error) {
         console.error('Error loading profanities from file:', error);
