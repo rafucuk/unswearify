@@ -1,0 +1,27 @@
+{
+  "name": "unswearify",
+  "version": "1.0.1",
+  "description": "An AIless swear detection module",
+  "main": "main.js",
+  "scripts": {
+    "start": "node ./src/main.js",
+    "test": "node ./src/test.js && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafucuk/unswearify.git"
+  },
+  "keywords": [
+    "swear",
+    "unswear",
+    "antiswear",
+    "sweardetect",
+    "detection"
+  ],
+  "author": "raufckk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafucuk/unswearify/issues"
+  },
+  "homepage": "https://github.com/rafucuk/unswearify#readme"
+}
