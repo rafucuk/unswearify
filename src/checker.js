@@ -8,11 +8,11 @@ let PROFANITIES;
 
 function loadProfanities(filePath) {
     try {
-        const profanitiesData = fs.readFileSync("./data/" + filePath + ".json");
+        const dataPath = path.join(__dirname, 'node_modules', 'unswearify', 'data', `${filePath}.json`);
+        const profanitiesData = fs.readFileSync(dataPath, 'utf8');
         PROFANITIES = new Set(JSON.parse(profanitiesData));
     } catch (error) {
         console.error('Error loading profanities from file:', error);
-        PROFANITIES = new Set(); // Fallback to an empty set if there's an error
     }
 }
 
